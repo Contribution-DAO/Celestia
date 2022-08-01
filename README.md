@@ -69,6 +69,10 @@ check ```last block height``` equal last block height on https://celestia.explor
 ![image](https://user-images.githubusercontent.com/83507970/182002293-aad8514b-ff0b-435e-8a3a-7e0998ba9bf5.png)
 
 
+### ** If your node doesn't sync, Please restart your node with the command
+```
+sudo systemctl restart celestia-appd
+```
 
 
 ## 4. Faucet testnet tokens
@@ -115,3 +119,46 @@ Go to https://celestia.explorers.guru and insert your VALOPER_ADDRESS , Press en
 
 ![image](https://user-images.githubusercontent.com/83507970/182002233-667be61c-74a1-4a41-bdbb-d3a46747e441.png)
 
+
+
+
+## 8. Usefull commands
+
+Stop node
+```
+sudo systemctl stop celestia-appd
+```
+
+
+Start node
+```
+sudo systemctl start celestia-appd
+```
+
+
+Restart node
+```
+sudo systemctl restart celestia-appd
+```
+
+Monitor logs
+```
+journalctl -fu celestia-appd -o cat
+```
+
+
+Show wallet details
+```
+celestia-appd keys list
+```
+
+Show wallet address
+```
+celestia-appd keys show $WALLET -a
+```
+
+
+Show validators address
+```
+celestia-appd keys show $WALLET --bech val -a
+```
