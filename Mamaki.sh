@@ -128,7 +128,7 @@ echo -e "\e[1m\e[32mSet validator node  \e[0m" && sleep 1
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 
 #function quickSync 
-echo -e "\e[1m\e[32mDown load QuickSync  \e[0m" && sleep 1
+echo -e "\e[1m\e[32mDownload QuickSync  \e[0m" && sleep 1
 cd $HOME
 rm -rf ~/.celestia-app/data
 mkdir -p ~/.celestia-app/data
