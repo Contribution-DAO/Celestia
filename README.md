@@ -34,7 +34,7 @@ You can use command below to check synchronization latest blocks and status sync
 
 
 ```
-celestia-appd status 2>&1 | jq .SyncInfo
+source $HOME/.bash_profile && celestia-appd status 2>&1 | jq .SyncInfo
 ```
 
 The result should be something like this: 
