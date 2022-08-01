@@ -14,14 +14,14 @@ The following hardware minimum requirements are recommended for running the vali
 
 ```
 
-wget -q -O Mamaki.sh https://raw.githubusercontent.com/NunoyHaxxana/Celestia/main/Mamaki.sh && chmod +x Mamaki.sh && sudo /bin/bash Mamaki.sh
+wget -q -O Mamaki.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mamaki.sh && chmod +x Mamaki.sh && sudo /bin/bash Mamaki.sh
 ```
 
 ## 2. Setup Bridge Node
 
 ```
 
-wget -q -O Bridge_Node.sh https://raw.githubusercontent.com/NunoyHaxxana/Celestia/main/Bridge_Node.sh && chmod +x Bridge_Node.sh && sudo /bin/bash Bridge_Node.sh
+wget -q -O Bridge_Node.sh https://github.com/Contribution-DAO/Celestia/edit/main/Bridge_Node.sh && chmod +x Bridge_Node.sh && sudo /bin/bash Bridge_Node.sh
 ```
 
 ## 3. Check Syncing latest blocks
@@ -107,7 +107,7 @@ pagination:
 
 ```
 
-wget -q -O create-validator.sh https://raw.githubusercontent.com/NunoyHaxxana/Celestia/main/create-validator.sh && chmod +x create-validator.sh && sudo /bin/bash create-validator.sh
+wget -q -O Create-validator.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Create-validator.sh && chmod +x Create-validator.sh && sudo /bin/bash Create-validator.sh
 ```
 
 ## 7. Verify your Validator
