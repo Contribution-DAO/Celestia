@@ -33,6 +33,8 @@ celestia-appd tx staking create-validator -y \
   
 celestia-appd tx slashing unjail --from=$WALLET_ADDRESS --chain-id=mamaki -y
 
-    
-  
+  echo "==========================================================================================================================="    
+  echo " "
+  echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1
+  echo " " 
   echo "==========================================================================================================================="     
