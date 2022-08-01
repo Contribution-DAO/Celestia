@@ -21,7 +21,7 @@ wget -q -O Mamaki.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia
 
 ```
 
-wget -q -O Bridge_Node.sh https://github.com/Contribution-DAO/Celestia/edit/main/Bridge_Node.sh && chmod +x Bridge_Node.sh && sudo /bin/bash Bridge_Node.sh
+wget -q -O Bridge_Node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Bridge_Node.sh && chmod +x Bridge_Node.sh && sudo /bin/bash Bridge_Node.sh
 ```
 
 ## 3. Check Syncing latest blocks
