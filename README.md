@@ -64,7 +64,7 @@ The result should be something like this:
   "backfill_blocks_total": "0"
 
 ```
-check ```last block height``` equal to https://celestia.explorers.guru/ and ```catching_up = false```
+check ```last block height``` equal last block height on https://celestia.explorers.guru/ and ```catching_up = false```
 
 ![image](https://user-images.githubusercontent.com/83507970/182002293-aad8514b-ff0b-435e-8a3a-7e0998ba9bf5.png)
 
