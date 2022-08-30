@@ -89,7 +89,7 @@ $request <YOUR_WALLET_ADDRESS>
 
 ## 5. Verify your balance
 
-Verify your balance before run Validator with command
+Verify your balance on wallet with command
 ```
 celestia-appd query bank balances $WALLET_ADDRESS
 ```
@@ -107,7 +107,7 @@ pagination:
 
 
 ## 6. Connect Validator
-
+Make sure balance on wallet before  run Validator command
 
 ```
 
