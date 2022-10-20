@@ -68,8 +68,9 @@ source ~/.bash_profile
 if [ ! $NODENAME ]; then
 read -p "Insert node name: " NODENAME && sleep 2
 echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
-fi
 celestia-appd init ${NODENAME} --chain-id mamaki && sleep 2
+fi
+
 
 
 if [ ! $WALLET ]; then
