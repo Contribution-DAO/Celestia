@@ -62,14 +62,14 @@ git clone https://github.com/celestiaorg/networks.git
 #function setupconfig 
 # set vars
 echo -e "\e[1m\e[32mSetup Node & Wallet \e[0m" && sleep 1
-if [ ! $nodename ]; then
+if [ ! $NODENAME ]; then
 read -p "Insert node name: " nodename && sleep 2
 echo 'export NODENAME='${nodename} >> $HOME/.bash_profile
 fi
 celestia-appd init ${nodename} --chain-id mamaki && sleep 2
 
 
-if [ ! $walletname ]; then
+if [ ! $WALLET ]; then
 read -p "Insert wallet name: " walletname && sleep 2
 echo 'export WALLET='${walletname} >> $HOME/.bash_profile
 fi
