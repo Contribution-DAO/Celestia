@@ -21,7 +21,7 @@ cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.3.0-rc2
+git checkout tags/v0.3.0-rc1
 make install
 
 sleep 3
