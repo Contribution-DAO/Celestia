@@ -63,6 +63,8 @@ git clone https://github.com/celestiaorg/networks.git
 # set vars
 echo -e "\e[1m\e[32mSetup Node & Wallet \e[0m" && sleep 1
 
+source ~/.bash_profile
+
 if [ ! $NODENAME ]; then
 read -p "Insert node name: " NODENAME && sleep 2
 echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
