@@ -81,7 +81,8 @@ celestia-appd config keyring-backend test
 
 #function setupgenesis 
 echo -e "\e[1m\e[32mSetup genesis config \e[0m" && sleep 1
-cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
+wget -qO $HOME/.celestia-app/config/genesis.json https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/genesis.json
+#cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config
 
 
 
