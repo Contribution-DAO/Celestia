@@ -107,15 +107,15 @@ sed -i.bak -e "s/^persistent-peers *=.*/persistent-peers = \"$PEERS\"/" $HOME/.c
 #function setP2PConfigurationOptions
 use_legacy="false"
 pex="true"
-max_connections="45"
-max_num_inbound_peers=0
-max_num_outbound_peers=0
+max_connections="90"
+#max_num_inbound_peers=0
+#max_num_outbound_peers=0
 peer_gossip_sleep_duration="2ms"
 
 sed -i.bak -e "s/^use-legacy *=.*/use-legacy = \"$use_legacy\"/" $HOME/.celestia-app/config/config.toml
 sed -i.bak -e "s/^pex *=.*/pex = \"$pex\"/" $HOME/.celestia-app/config/config.toml
-sed -i.bak -e "s/^max-num-inbound-peers *=.*/max-num-inbound-peers = $max_num_inbound_peers/" $HOME/.celestia-app/config/config.toml
-sed -i.bak -e "s/^max-num-outbound-peers *=.*/max-num-outbound-peers = $max_num_outbound_peers/" $HOME/.celestia-app/config/config.toml
+#sed -i.bak -e "s/^max-num-inbound-peers *=.*/max-num-inbound-peers = $max_num_inbound_peers/" $HOME/.celestia-app/config/config.toml
+#sed -i.bak -e "s/^max-num-outbound-peers *=.*/max-num-outbound-peers = $max_num_outbound_peers/" $HOME/.celestia-app/config/config.toml
 sed -i.bak -e "s/^max-connections *=.*/max-connections = \"$max_connections\"/" $HOME/.celestia-app/config/config.toml
 sed -i.bak -e "s/^peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = \"$peer_gossip_sleep_duration\"/" $HOME/.celestia-app/config/config.toml
 
