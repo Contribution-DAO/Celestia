@@ -17,7 +17,7 @@ The following hardware minimum requirements are recommended for running the vali
 wget -q -O Mamaki.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mamaki.sh && chmod +x Mamaki.sh && sudo /bin/bash Mamaki.sh
 ```
 
-## 2. Setup Bridge Node
+## 2. (OPTIONAL) Setup Bridge Node
 
 ```
 
