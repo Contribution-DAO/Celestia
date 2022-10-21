@@ -10,12 +10,23 @@ The following hardware minimum requirements are recommended for running the vali
 >:black_square_button:Bandwidth: 1 Gbps for Download/100 Mbps for Upload<br> 
 >:black_square_button:TCP Port: 26656,26657,26660,9090<br>
 
+
+## 0. Log on to root user
+
+```
+
+sudo su
+```
+
+
 ## 1. Setup Validator Node
 
 ```
 
 wget -q -O Mamaki.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mamaki.sh && chmod +x Mamaki.sh && sudo /bin/bash Mamaki.sh
 ```
+
+Node Name and Wallet Name plese use english letters and number only
 
 ## 2. (OPTIONAL) Setup Bridge Node
 
