@@ -102,7 +102,7 @@ $request <YOUR_WALLET_ADDRESS>
 
 Verify your balance on wallet with command
 ```
-celestia-appd query bank balances $WALLET_ADDRESS
+source $HOME/.bash_profile && celestia-appd query bank balances $WALLET_ADDRESS
 ```
 
 The result should be something like this: 
@@ -160,16 +160,16 @@ journalctl -fu celestia-appd -o cat
 
 Show wallet details
 ```
-celestia-appd keys list
+source $HOME/.bash_profile && celestia-appd keys list
 ```
 
 Show wallet address
 ```
-celestia-appd keys show $WALLET -a
+source $HOME/.bash_profile && celestia-appd keys show $WALLET -a
 ```
 
 
 Show validators address
 ```
-celestia-appd keys show $WALLET --bech val -a
+source $HOME/.bash_profile && celestia-appd keys show $WALLET --bech val -a
 ```
