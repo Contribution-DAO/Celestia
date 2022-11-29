@@ -240,7 +240,7 @@ sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
 
 
 PS3='Please enter your choice (input your option number and press enter): '
-options=("Install" "Install + Snap" "Check Sync" "Snapshot" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Quit")
+options=("Install" "Install + Snap" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Quit")
 
 select opt in "${options[@]}"
 do
@@ -294,7 +294,7 @@ Checkbalances
 
 ;;
 
-"Snapshot")
+"Snapshort")
             echo -e '\e[1m\e[32mYou choose Download Snapshot ...\e[0m' && sleep 1
 Syncsnap
 echo -e "\e[1m\e[32mDownload Snapshot complete!\e[0m" && sleep 1
