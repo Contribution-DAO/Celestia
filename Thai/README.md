@@ -25,11 +25,12 @@ sudo su
 
 wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
 ```
-![image](https://user-images.githubusercontent.com/83507970/204495928-97cee31e-1a8c-400f-ac13-4d79f09d111b.png)
+![image](https://user-images.githubusercontent.com/83507970/204498896-b034857d-e020-4b0d-9fe7-e0175f059d38.png)
 
-เลือกหมายเลข 1 สำหรับการติดตั้งแบบไม่โหลด snap short
+เลือกหมายเลข 1 สำหรับการติดตั้งแบบไม่โหลด snap short แล้้วค่อยมา โหลด snap short ทีหลัง แนะนำสำหรับคนที่คิดว่า internet ไม่ค่อยดี เพราะ แบบนี้จะไม่ต้องมาลงใหม่หาก net หลุด 
+หากเลือกติดตั้งแบบ 1 เมื่อติดตั้งเสร็จให้จด seed ของตัวเองเอาไว้ด้วย หลังจากนั้นให้เลือก เมนู 4 เพื่อทำการ download sanp short 
 
-เลือกหมายเลข 2 สำหรับการติดตั้งแบบโหลด snap short แนะนำให้เลือกข้อนี้ แต่อาจจะใช้เวลา sync นานหน่อย ตามความเร็ว internet ของ server 2 - 12 ชั่วโมง
+เลือกหมายเลข 2 สำหรับการติดตั้งแบบโหลด snap short แนะนำให้เลือกข้อนี้สำหรับคนที่ internet ของ server แรง แต่อาจจะใช้เวลา sync นานหน่อย ตามความเร็ว internet ของ server 2 - 12 ชั่วโมง
 
 เมื่อถึงขั้นตอนการตั้งชื่อ Node Name and Wallet Name  ควรตั้งชื่อเป็น ภาษาอังกฤษ เท่านั้น ห้ามมีตัวอักษรพิเศษ อย่าลืมจด seed เก็บไว้ ถ้าไม่ได้จด จะไม่สามารถ recovery หรือ ย้าย wallet ได้
 
@@ -39,21 +40,24 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 
 ## 3. ตรวจสอบ Block sync จากเมนูหมายเลข 3
 
-![image](https://user-images.githubusercontent.com/83507970/204495972-f1eaeb4e-1b49-4204-a1a6-fd35b2b1f7ec.png)
+![image](https://user-images.githubusercontent.com/83507970/204498908-08c71226-849e-45da-8c1f-00808d000f12.png)
 
 
 
 
-## 4. ตรวจสอบ Balance  จากเมนูหมายเลข 4
+## 4. ตรวจสอบ Balance  จากเมนูหมายเลข 5
+
+![image](https://user-images.githubusercontent.com/83507970/204498916-288312ed-99e0-4038-9577-3f0ad38d686b.png)
 
 
-
-## 5. สร้าง validator node จากเมนูหมายเลข 5
+## 5. สร้าง validator node จากเมนูหมายเลข 6
 ก่อนจะรันคำสั่งนี้ ต้องตรวจสอบ Block sync และ ได้ balance แล้ว 
+![image](https://user-images.githubusercontent.com/83507970/204498930-4996a60c-1d1e-46ce-818f-666a7534300e.png)
 
 
-## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 8
+## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 9
 
+![image](https://user-images.githubusercontent.com/83507970/204498941-76c4fe6c-f7f5-48e9-a996-e748c33f983f.png)
 
 
 
