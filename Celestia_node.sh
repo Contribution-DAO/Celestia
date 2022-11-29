@@ -56,14 +56,14 @@ echo " "
 echo -e "\e[1m\e[32mCreate Celestia Wallet ... \e[0m" && sleep 1
 source ~/.bash_profile
 
-if [ ! $NODENAME ]; then
+if [ ! $CNODENAME ]; then
 read -p "Insert node name: " NODENAME && sleep 2
-echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
+echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
 if [ ! $WALLET ]; then
 read -p "Insert wallet name: " WALLET && sleep 2
-echo 'export WALLET='${WALLET} >> $HOME/.bash_profile
+echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
 fi
 source $HOME/.bash_profile
 celestia-appd config chain-id mamaki
@@ -77,7 +77,7 @@ echo " "
 echo -e "\e[1m\e[32mSet chain id mamaki and keyring-backend test... \e[0m" && sleep 1
 celestia-appd config keyring-backend test
 celestia-appd config chain-id mamaki
-celestia-appd init ${NODENAME} --chain-id mamaki && sleep 2
+celestia-appd init ${CNODENAME} --chain-id mamaki && sleep 2
 }
 
 
@@ -180,14 +180,14 @@ echo -e "\e[1m\e[31m **Important** Please write this mnemonic phrase in a safe p
 source $HOME/.bash_profile && celestia-appd keys add $WALLET
 echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${WALLET} -a)\e[0m" && sleep 1
 echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1    
-echo 'export WALLET_ADDRESS='$(celestia-appd keys show ${WALLET} -a) >> $HOME/.bash_profile
-echo 'export VALOPER_ADDRESS='$(celestia-appd keys show ${WALLET} --bech val -a) >> $HOME/.bash_profile
+echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
+echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
 }
 
 function Checkbalances {
 echo " "
 echo -e "\e[1m\e[32mCheck you balance... \e[0m" && sleep 1
-source $HOME/.bash_profile && celestia-appd query bank balances $WALLET_ADDRESS
+source $HOME/.bash_profile && celestia-appd query bank balances $CWALLET_ADDRESS
 }
 
 
@@ -196,8 +196,8 @@ echo " "
 echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1
 celestia-appd tx staking create-validator -y \
   --amount 10000000utia \
-  --from $WALLET_ADDRESS \
-  --moniker $NODENAME \
+  --from $CWALLET_ADDRESS \
+  --moniker $CNODENAME \
   --pubkey  $(celestia-appd tendermint show-validator) \
   --commission-rate=0.1 \
   --commission-max-rate=0.2 \
@@ -208,8 +208,8 @@ celestia-appd tx staking create-validator -y \
   
   sleep 60
   
-celestia-appd tx slashing unjail --from=$WALLET_ADDRESS --chain-id=mamaki -y
- echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1
+celestia-appd tx slashing unjail --from=$CWALLET_ADDRESS --chain-id=mamaki -y
+ echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
 }
 
 
@@ -226,9 +226,10 @@ function Delete {
 echo " "
 echo -e "\e[1m\e[32mDelete you node ... \e[0m" && sleep 1
 sudo systemctl stop celestia-appd && sudo systemctl disable celestia-appd && sudo rm /etc/systemd/system/celestia-appd.service && sudo systemctl daemon-reload && rm -rf $HOME/.celestia-app  && rm $(which celestia-appd) 
-sudo sed -i '/WALLET/d' $HOME/.bash_profile
-sudo sed -i '/WALLET_ADDRESS/d' $HOME/.bash_profile
-sudo sed -i '/VALOPER_ADDRESS/d' $HOME/.bash_profile
+sudo sed -i '/CWALLET/d' $HOME/.bash_profile
+sudo sed -i '/CWALLET_ADDRESS/d' $HOME/.bash_profile
+sudo sed -i '/CVALOPER_ADDRESS/d' $HOME/.bash_profile
+sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
 }
 
 
