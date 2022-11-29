@@ -4,9 +4,15 @@
 The following hardware minimum requirements are recommended for running the validator node:
 
 >:black_square_button:  OS Ubuntu 18.04 - 22.04<br> 
+
 >:black_square_button:Memory: 8 GB RAM<br> 
+สร้างจริง 4GB ก็พอ
+
 >:black_square_button:CPU: Quad-Core<br> 
+
 >:black_square_button:Disk: 250 GB SSD Storage<br> 
+เขาแนะนำ 250GB แต่่สร้างแค่ 100GB ก็พอ
+
 >:black_square_button:Bandwidth: 1 Gbps for Download/100 Mbps for Upload<br> 
 >:black_square_button:TCP Port: 26656,26657,26660,9090<br>
 
