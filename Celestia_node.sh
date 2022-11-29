@@ -61,7 +61,7 @@ read -p "Insert node name: " NODENAME && sleep 2
 echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
-if [ ! $WALLET ]; then
+if [ ! $CWALLET ]; then
 read -p "Insert wallet name: " WALLET && sleep 2
 echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
 fi
