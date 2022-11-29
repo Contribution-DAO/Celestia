@@ -28,8 +28,11 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 ![image](https://user-images.githubusercontent.com/83507970/204495928-97cee31e-1a8c-400f-ac13-4d79f09d111b.png)
 
 เลือกหมายเลข 1 สำหรับการติดตั้งแบบไม่โหลด snap short
+
 เลือกหมายเลข 2 สำหรับการติดตั้งแบบโหลด snap short แนะนำให้เลือกข้อนี้ แต่อาจจะใช้เวลา sync นานหน่อย ตามความเร็ว internet ของ server 2 - 12 ชั่วโมง
-เมื่อถึงขั้นตอนการตั้งชื่อ Node Name and Wallet Name  ควรตั้งชื่อเป็น ภาษาอังกฤษ เท่านั้น ห้ามมีตัวอักษรพิเศษ
+
+เมื่อถึงขั้นตอนการตั้งชื่อ Node Name and Wallet Name  ควรตั้งชื่อเป็น ภาษาอังกฤษ เท่านั้น ห้ามมีตัวอักษรพิเศษ อย่าลืมจด seed เก็บไว้ ถ้าไม่ได้จด จะไม่สามารถ recovery หรือ ย้าย wallet ได้
+
 เมื่อได้เลขกระเป็ามาแล้ว ให้เอาไปขอ Token ใน discord ของ celestia
 
 
@@ -45,8 +48,8 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 
 
 
-## 5. ขั้นตอนการสร้าง validator node
-หลังจากที่ตรวจสอบ Block sync และ ได้ balance แล้ว ให้เลือก เมนูข้อ 5
+## 5. สร้าง validator node จากเมนูหมายเลข 5
+ก่อนจะรันคำสั่งนี้ ต้องตรวจสอบ Block sync และ ได้ balance แล้ว 
 
 
 ## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 8
