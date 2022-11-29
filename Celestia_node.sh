@@ -68,6 +68,7 @@ fi
 source $HOME/.bash_profile
 celestia-appd config chain-id mamaki
 celestia-appd config keyring-backend test
+sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 }
 
 
