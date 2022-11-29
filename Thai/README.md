@@ -56,6 +56,7 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 
 
 ## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 9
+หลังจากลบเรียบร้อยแล้ว ให้กดปิดหน้าจอ server ไป แล้วเปิดขึ้นมาใหม่ ถึงทำการ install ใหม่อีกครั้งนะ
 
 ![image](https://user-images.githubusercontent.com/83507970/204498941-76c4fe6c-f7f5-48e9-a996-e748c33f983f.png)
 
