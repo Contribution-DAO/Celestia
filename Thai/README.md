@@ -126,7 +126,12 @@ source $HOME/.bash_profile && celestia-appd keys show $WALLET --bech val -a
 ## คำแนะนำเพิ่มเติมสำหรับคนที่ใช้ google cloud
 
 
-1. ให้ทำการคิดตั้งจาก script ด้านล่าง พิมพ์ 1 แล้ว Enter
+1. ให้ทำการคิดตั้งจาก script ด้านล่าง พิมพ์ 1 แล้ว Enter รอประมาณ 5 นาที ระบบจะทำการติดตั้งให้ การตั้งชื่อ ให้ตั้งเป็นภาษาอังกฤษและตัวเลขเท่านั้นนะ
+อย่าลืมจด sedd นะ
+```
+sudo su
+```
+
 ```
 
 wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
@@ -144,7 +149,11 @@ sudo apt install tmux
 sudo tmux new -s sync
 ```
 
-4. หลังจากเข้ามาที่หน้าจอ tmux แล้ว ให้ทำการคิดตั้งจาก snap short โดย พิมพ์ 4 แล้ว Enter
+4. หลังจากเข้ามาที่หน้าจอ tmux แล้ว ให้ทำการติดตั้ง snap short โดย พิมพ์ 4 แล้ว Enter
+```
+sudo su
+```
+
 ```
 
 wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
