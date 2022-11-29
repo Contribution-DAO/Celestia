@@ -171,6 +171,7 @@ sudo systemctl restart celestia-appd
 function Checksync {
 echo " "
 echo -e "\e[1m\e[32mCheck you node sync... \e[0m" && sleep 1
+source $HOME/.bash_profile && celestia-appd status 2>&1 | jq .SyncInfo.latest_block_height
 source $HOME/.bash_profile && celestia-appd status 2>&1 | jq .SyncInfo.catching_up
 }
 
