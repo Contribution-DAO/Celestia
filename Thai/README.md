@@ -112,13 +112,13 @@ source $HOME/.bash_profile && celestia-appd keys list
 
 Show wallet address
 ```
-source $HOME/.bash_profile && celestia-appd keys show $WALLET -a
+source $HOME/.bash_profile && celestia-appd keys show $CWALLET -a
 ```
 
 
 Show validators address
 ```
-source $HOME/.bash_profile && celestia-appd keys show $WALLET --bech val -a
+source $HOME/.bash_profile && celestia-appd keys show $CWALLET --bech val -a
 ```
 
 
