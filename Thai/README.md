@@ -128,6 +128,9 @@ source $HOME/.bash_profile && celestia-appd keys show $WALLET --bech val -a
 
 1. ให้ทำการคิดตั้งจาก script ด้านล่าง พิมพ์ 1 แล้ว Enter รอประมาณ 5 นาที ระบบจะทำการติดตั้งให้ การตั้งชื่อ ให้ตั้งเป็นภาษาอังกฤษและตัวเลขเท่านั้นนะ
 อย่าลืมจด sedd นะ
+![image](https://user-images.githubusercontent.com/83507970/204548850-f3dd2280-f604-4491-83ae-e2be3a03956f.png)
+
+
 ```
 sudo su
 ```
@@ -150,6 +153,9 @@ sudo tmux new -s sync
 ```
 
 4. หลังจากเข้ามาที่หน้าจอ tmux แล้ว ให้ทำการติดตั้ง snap short โดย พิมพ์ 4 แล้ว Enter
+
+![image](https://user-images.githubusercontent.com/83507970/204548939-06fde13d-67c1-46bc-bcc2-d836c0200643.png)
+
 ```
 sudo su
 ```
@@ -160,7 +166,13 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 ```
 
 หลังจากรันขั้นตอนนี้แล้ว สามารถปิดหน้าจอของ google console ไปได้เลย ปิดไฟนอนได้ อีกประมาณ 12 ชั่วโมงค่อยเข้ามาตรวจสอบว่า Node ทำงานได้ไหม โดยการรันเมนู แล้วพิมพ์ 3 กด enter
+
+![image](https://user-images.githubusercontent.com/83507970/204549265-3659b558-f250-478a-901f-cd2044d3cf27.png)
+
 ```
 
 sudo su && sudo /bin/bash Celestia_node.sh
 ```
+
+จะได้ตัวเลขออกมา กด 3 แล้ว enter อีกครั้งเพื่อดูว่าตัวเลขขยับไหม 
+กด 10 แล้ว enter เพื่อออกจากโปรแกรม
