@@ -120,3 +120,38 @@ Show validators address
 ```
 source $HOME/.bash_profile && celestia-appd keys show $WALLET --bech val -a
 ```
+
+
+
+## คำแนะนำเพิ่มเติมสำหรับคนที่ใช้ google cloud
+
+
+1. ให้ทำการคิดตั้งจาก script ด้านล่าง พิมพ์ 1 แล้ว Enter
+```
+
+wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
+```
+
+2. ติดตั้ง tmux 
+```
+
+sudo apt install tmux
+```
+
+3. สร้าง session tmux
+```
+
+sudo tmux new -s sync
+```
+
+4. หลังจากเข้ามาที่หน้าจอ tmux แล้ว ให้ทำการคิดตั้งจาก snap short โดย พิมพ์ 4 แล้ว Enter
+```
+
+wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
+```
+
+หลังจากรันขั้นตอนนี้แล้ว สามารถปิดหน้าจอของ google console ไปได้เลย ปิดไฟนอนได้ อีกประมาณ 12 ชั่วโมงค่อยเข้ามาตรวจสอบว่า Node ทำงานได้ไหม โดยการรันเมนู แล้วพิมพ์ 3 กด enter
+```
+
+sudo su && sudo /bin/bash Celestia_node.sh
+```
