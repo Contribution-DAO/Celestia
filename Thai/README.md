@@ -23,7 +23,7 @@ sudo su
 
 ```
 
-wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.shh && sudo /bin/bash Celestia_node.sh
+wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
 ```
 ![image](https://user-images.githubusercontent.com/83507970/204495928-97cee31e-1a8c-400f-ac13-4d79f09d111b.png)
 
