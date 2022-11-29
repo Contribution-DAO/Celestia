@@ -28,7 +28,7 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 ![image](https://user-images.githubusercontent.com/83507970/204498896-b034857d-e020-4b0d-9fe7-e0175f059d38.png)
 
 เลือกหมายเลข 1 สำหรับการติดตั้งแบบไม่โหลด snap short แล้้วค่อยมา โหลด snap short ทีหลัง แนะนำสำหรับคนที่คิดว่า internet ไม่ค่อยดี เพราะ แบบนี้จะไม่ต้องมาลงใหม่หาก net หลุด 
-หากเลือกติดตั้งแบบ 1 เมื่อติดตั้งเสร็จให้จด seed ของตัวเองเอาไว้ด้วย หลังจากนั้นให้เลือก เมนู 4 เพื่อทำการ download sanp short 
+หากเลือกติดตั้งแบบ 1 เมื่อติดตั้งเสร็จให้จด seed ของตัวเองเอาไว้ด้วย หลังจากนั้นให้เลือก เมนู 4 เพื่อทำการ download sanp short เองอีกครั้ง 
 
 เลือกหมายเลข 2 สำหรับการติดตั้งแบบโหลด snap short แนะนำให้เลือกข้อนี้สำหรับคนที่ internet ของ server แรง แต่อาจจะใช้เวลา sync นานหน่อย ตามความเร็ว internet ของ server 2 - 12 ชั่วโมง
 
