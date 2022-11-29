@@ -225,7 +225,7 @@ sudo systemctl start celestia-appd
 function Delete {
 echo " "
 echo -e "\e[1m\e[32mDelete you node ... \e[0m" && sleep 1
-sudo systemctl stop celestia-appd && sudo systemctl disable celestia-appd && sudo rm /etc/systemd/system/celestia-appd.service && sudo systemctl daemon-reload && rm -rf $HOME/.celestia-app  && rm $(which celestia-appd) 
+sudo systemctl stop celestia-appd && sudo systemctl disable celestia-appd && sudo rm /etc/systemd/system/celestia-appd.service && sudo systemctl daemon-reload && rm -rf $HOME/.celestia-app && rm -rf $HOME/celestia-app  && rm $(which celestia-appd) 
 sudo sed -i '/CWALLET/d' $HOME/.bash_profile
 sudo sed -i '/CWALLET_ADDRESS/d' $HOME/.bash_profile
 sudo sed -i '/CVALOPER_ADDRESS/d' $HOME/.bash_profile
