@@ -36,11 +36,16 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 
 เมื่อได้เลขกระเป็ามาแล้ว ให้เอาไปขอ Token ใน discord ของ celestia
 
+หลังจากติดตั้งแล้ว สามารถ พิมพ์ 3 แล้ว enter เพือดู block sync ได้
+หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
+
 
 
 ## 3. ตรวจสอบ Block sync จากเมนูหมายเลข 3
 
 ![image](https://user-images.githubusercontent.com/83507970/204498908-08c71226-849e-45da-8c1f-00808d000f12.png)
+
+สามารถกดดูได้เรื่อย ๆ โดยการพิมพ์ 3 แล้ว enter หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
 
 
 
@@ -49,10 +54,14 @@ wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/C
 
 ![image](https://user-images.githubusercontent.com/83507970/204498916-288312ed-99e0-4038-9577-3f0ad38d686b.png)
 
+หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
+
 
 ## 5. สร้าง validator node จากเมนูหมายเลข 6
 ก่อนจะรันคำสั่งนี้ ต้องตรวจสอบ Block sync และ ได้ balance แล้ว 
 ![image](https://user-images.githubusercontent.com/83507970/204498930-4996a60c-1d1e-46ce-818f-666a7534300e.png)
+
+หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
 
 
 ## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 9
