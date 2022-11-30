@@ -165,4 +165,17 @@ sudo /bin/bash Celestia_node.sh
 ระยะเวลาโดยประมาณขึ่นอยู่กับความเร็ว internet ของ server ซึ่งอยู่ระหว่าง 2 - 20 ชม. โดยประมาณ
 
 
-สามารถปิดหน้าจอ console ของ google clound ทิ้งไปได้เลย 
+สามารถปิดหน้าจอ console ของ google clound ทิ้งไปได้เลย แล้วค่อยกลับมาตรวจสอบอีกครั้งตามระยะเวลาที่แจ้งให้ทราบว่าต้องใช้เวลา download ประมาณกี่ชั่วโมง
+หากต้องการดูว่า download ไปถึงไหนแล้ว ให้เปิดหน้าจอ console ของ google clound ขึ้นมา
+
+```
+sudo su
+```
+
+```
+tmux a -t sync
+```
+
+
+เมื่อตรวจสอบว่า download snap short เรียบร้อยแล้วให้ไปทำตาม step ด้านล่างต่อไป
+https://github.com/Contribution-DAO/Celestia/edit/main/Thai/README.md#3-%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A-block-sync-%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%82-3
