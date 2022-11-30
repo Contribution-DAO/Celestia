@@ -263,7 +263,7 @@ setP2PConfigurationOptions
 Restart
 Addwallet
 echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
-
+break
 ;;
 
 "Install + Snap")
@@ -301,7 +301,7 @@ Checkbalances
             echo -e '\e[1m\e[32mYou choose Download Snapshot ...\e[0m' && sleep 1
 Syncsnap
 echo -e "\e[1m\e[32mDownload Snapshot complete!\e[0m" && sleep 1
-break
+
 
 ;;
 
