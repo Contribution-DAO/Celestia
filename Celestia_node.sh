@@ -151,6 +151,7 @@ sed -i.bak -e "s/^peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = \
 
 function Syncsnap {
 echo " "
+sudo systemctl stop celestia-appd
 echo -e "\e[1m\e[32mDownload data from Lasted snap ... \e[0m" && sleep 1
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app --keep-addr-book
 cd $HOME
@@ -158,6 +159,7 @@ rm -rf ~/.celestia-app/data
 mkdir -p ~/.celestia-app/data
 SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | egrep -o ">mamaki.*tar" | tr -d ">") 
 wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - -C ~/.celestia-app/data/
+sudo systemctl restart celestia-appd
 }
 
 
