@@ -123,3 +123,46 @@ source $HOME/.bash_profile && celestia-appd keys show $CWALLET --bech val -a
 
 
 
+
+
+
+## คำแนะนำสำหรับการติดตั้งบน google cloud
+
+1. เปลี่ยนเป็น root user และ download script ติดตั้งจาก 
+```
+sudo su
+```
+
+```
+wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
+```
+
+เมื่อ script ทำงานแล้วจะได้หน้าจอเมนู 1-10 ขึ้นมา
+ให้พิมพ์ 1 แล้วกด enter เพื่อทำการติดตั้ง node celestia ซึ่งจะใช้เวลาประมาณ 5 - 10 นาที ในการติดตั้ง 
+
+![image](https://user-images.githubusercontent.com/83507970/204750852-2887ffbe-6cd7-4327-8ee9-7e6112a3414c.png)
+
+* ระหว่างการติดตั้ง script จะให้ตั้งชื่อ Wallet name และ Node name ควรตั้งเป็นภาษาอังกฤษ และ ตัวเลขเท่านั่น
+** เมื่อติดตั้งเสร็จ script จะแสดงข้อมูล seed ให้เราเห็น ให้บรรทึก seed เก็บไว้ให้ดี ห้ามลิมโดยเด็ดขาด
+
+2. ติดตั้ง tmux และ ทำการ download snap short
+
+```
+sudo apt install tmux
+```
+
+หลังจากติดตั้งเรียบร้อยแล้วให้เรียกใช้งาน tmux โดยใช้คำสั่ง
+```
+sudo tmux new -s sync
+```
+
+ทำการ download snap short โดยเรียกใช้คำสั่งจากด้านล่างนี้ และ พิมพ์ 4 และ enter
+```
+sudo /bin/bash Celestia_node.sh
+```
+![image](https://user-images.githubusercontent.com/83507970/204751920-7f38edcc-e258-4420-862d-60d33cb10847.png)
+
+ระยะเวลาโดยประมาณขึ่นอยู่กับความเร็ว internet ของ server ซึ่งอยู่ระหว่าง 2 - 20 ชม. โดยประมาณ
+
+
+สามารถปิดหน้าจอ console ของ google clound ทิ้งไปได้เลย 
