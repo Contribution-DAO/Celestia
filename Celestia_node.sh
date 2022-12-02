@@ -93,12 +93,27 @@ curl -s https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/gen
 function Setseedsandpeers  {
 echo " "
 echo -e "\e[1m\e[32mSet seeds and peers... \e[0m" && sleep 1
-peers=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/peers.txt | tr -d '\n')
-bootstrap_peers=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
-sed -i.bak -e 's|^bootstrap-peers *=.*|bootstrap-peers = "'"$bootstrap_peers"'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.celestia-app/config/config.toml
+curl -s https://rpc-mamaki.pops.one/net_info | jq -r '.result.peers[] | .url'  > $HOME/.celestia-app/config/bootstrap-peers.txt
+sed -i s/$/,/ $HOME/.celestia-app/config/bootstrap-peers.txt
+BOOTSTRAP_PEERS=$(cat $HOME/.celestia-app/config/bootstrap-peers.txt | tr -d '\n' | sed '$ s/.$//')
+sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
+PEERS=e5fa03c0d18d1e51182a7d787fc25c3e57f03d7b@celestia-testnet.nodejumper.io:29656,0eebb7b72d2169c08be75502650e4b1f7b7708cf@135.181.59.162:11656,e4429e99609c8c009969b0eb73c973bff33712f9@141.94.73.39:43656,09263a4168de6a2aaf7fef86669ddfe4e2d004f6@142.132.209.229:26656,13d8abce0ff9565ed223c5e4b9906160816ee8fa@94.62.146.145:36656,322542cec82814d8903de2259b1d4d97026bcb75@51.178.133.224:26666,5273f0deefa5f9c2d0a3bbf70840bb44c65d835c@80.190.129.50:49656,5a4c337189eed845f3ece17f88da0d94c7eb2f9c@209.126.84.147:26656,ec072065bd4c6126a5833c97c8eb2d4382db85be@88.99.249.251:26656,cd1524191300d6354d6a322ab0bca1d7c8ddfd01@95.216.223.149:26656,2fd76fae32f587eceb266dce19053b20fce4e846@207.154.220.138:26656,1d6a3c3d9ffc828b926f95592e15b1b59b5d8175@135.181.56.56:26656,fe2025284ad9517ee6e8b027024cf4ae17e320c9@198.244.164.11:26656,fcff172744c51684aaefc6fd3433eae275a2f31b@159.203.18.242:26656,f7b68a491bae4b10dbab09bb3a875781a01274a5@65.108.199.79:20356,6c076056fc80a813b26e24ba8d28fa374cd72777@149.102.153.197:26656,180378bab87c9cecea544eb406fcd8fcd2cbc21b@168.119.122.78:26656,88fa96d09a595a1208968727819367bd2fe8eabe@164.70.120.56:26656,84133cfde6e5fcaf5915436d56b3eef1d1996d17@45.132.245.56:26656,42b331adaa9ece4c455b92f0d26e3382e46d43f0@161.97.180.20:36656,c8c0456a5174ab082591a9466a6e0cb15c915a65@194.233.85.193:26656,6a62bf1f489a5231ddc320a2607ab2595558db75@154.12.240.49:26656,d0b19e4d133441fd41b4d74ac8de2138313ad49e@195.201.41.137:26656,a46bbdb81e66c950e3cdbe5ee748a2d6bdb185dd@161.97.168.77:26656,831cd61b04ac95155f101723b851af53460d4d65@65.108.217.169:26656,550ab50ad0df01408928a3479e643286a47b4fc9@46.4.213.197:26656,43e9da043318a4ea0141259c17fcb06ecff816af@141.94.73.39:43656,45d0154bea2e0bbffec343894072f5feab19d242@65.108.71.92:43656,2e4084408b641a90c299a499c32874f0ab0f2956@65.108.44.149:22656,de6ba05f3ed583a12c396c182e5126ed65a32514@154.53.44.239:26656,d6fb487ff10d9878449beaa89007da15ec43057f@194.163.137.209:26656
+sed -i.bak -e "s/^persistent-peers *=.*/persistent-peers = \"$PEERS\"/" $HOME/.celestia-app/config/config.toml
 }
 
 
+function Addnewpeer  {
+echo " "
+echo -e "\e[1m\e[32mAdd new peers... \e[0m" && sleep 1
+sudo systemctl stop celestia-appd
+curl -s https://rpc-mamaki.pops.one/net_info | jq -r '.result.peers[] | .url'  > $HOME/.celestia-app/config/bootstrap-peers.txt
+sed -i s/$/,/ $HOME/.celestia-app/config/bootstrap-peers.txt
+BOOTSTRAP_PEERS=$(cat $HOME/.celestia-app/config/bootstrap-peers.txt | tr -d '\n' | sed '$ s/.$//')
+sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
+PEERS=e5fa03c0d18d1e51182a7d787fc25c3e57f03d7b@celestia-testnet.nodejumper.io:29656,0eebb7b72d2169c08be75502650e4b1f7b7708cf@135.181.59.162:11656,e4429e99609c8c009969b0eb73c973bff33712f9@141.94.73.39:43656,09263a4168de6a2aaf7fef86669ddfe4e2d004f6@142.132.209.229:26656,13d8abce0ff9565ed223c5e4b9906160816ee8fa@94.62.146.145:36656,322542cec82814d8903de2259b1d4d97026bcb75@51.178.133.224:26666,5273f0deefa5f9c2d0a3bbf70840bb44c65d835c@80.190.129.50:49656,5a4c337189eed845f3ece17f88da0d94c7eb2f9c@209.126.84.147:26656,ec072065bd4c6126a5833c97c8eb2d4382db85be@88.99.249.251:26656,cd1524191300d6354d6a322ab0bca1d7c8ddfd01@95.216.223.149:26656,2fd76fae32f587eceb266dce19053b20fce4e846@207.154.220.138:26656,1d6a3c3d9ffc828b926f95592e15b1b59b5d8175@135.181.56.56:26656,fe2025284ad9517ee6e8b027024cf4ae17e320c9@198.244.164.11:26656,fcff172744c51684aaefc6fd3433eae275a2f31b@159.203.18.242:26656,f7b68a491bae4b10dbab09bb3a875781a01274a5@65.108.199.79:20356,6c076056fc80a813b26e24ba8d28fa374cd72777@149.102.153.197:26656,180378bab87c9cecea544eb406fcd8fcd2cbc21b@168.119.122.78:26656,88fa96d09a595a1208968727819367bd2fe8eabe@164.70.120.56:26656,84133cfde6e5fcaf5915436d56b3eef1d1996d17@45.132.245.56:26656,42b331adaa9ece4c455b92f0d26e3382e46d43f0@161.97.180.20:36656,c8c0456a5174ab082591a9466a6e0cb15c915a65@194.233.85.193:26656,6a62bf1f489a5231ddc320a2607ab2595558db75@154.12.240.49:26656,d0b19e4d133441fd41b4d74ac8de2138313ad49e@195.201.41.137:26656,a46bbdb81e66c950e3cdbe5ee748a2d6bdb185dd@161.97.168.77:26656,831cd61b04ac95155f101723b851af53460d4d65@65.108.217.169:26656,550ab50ad0df01408928a3479e643286a47b4fc9@46.4.213.197:26656,43e9da043318a4ea0141259c17fcb06ecff816af@141.94.73.39:43656,45d0154bea2e0bbffec343894072f5feab19d242@65.108.71.92:43656,2e4084408b641a90c299a499c32874f0ab0f2956@65.108.44.149:22656,de6ba05f3ed583a12c396c182e5126ed65a32514@154.53.44.239:26656,d6fb487ff10d9878449beaa89007da15ec43057f@194.163.137.209:26656
+sed -i.bak -e "s/^persistent-peers *=.*/persistent-peers = \"$PEERS\"/" $HOME/.celestia-app/config/config.toml
+sudo systemctl start celestia-appd 
+}
 
 
 
@@ -243,7 +258,7 @@ sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
 
 
 PS3='Please enter your choice (input your option number and press enter): '
-options=("Install" "Install + Snap" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Quit")
+options=("Install" "Install + Snap" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Add Peer" "Quit")
 
 select opt in "${options[@]}"
 do
@@ -332,6 +347,13 @@ echo -e "\e[1m\e[32mRestore Config.toml complete!\e[0m" && sleep 1
 echo -e '\e[1m\e[32mYou choose Uninstall ...\e[0m' && sleep 1
 Delete
 echo -e "\e[1m\e[32mYour Node was Uninstall complete!\e[0m" && sleep 1
+break
+;;
+
+"Add Peer")
+echo -e '\e[1m\e[32mYou choose Add new Peer...\e[0m' && sleep 1
+Addnewpeer
+echo -e "\e[1m\e[32mYour Node was  Add new Peer complete!\e[0m" && sleep 1
 break
 ;;
 
