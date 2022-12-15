@@ -204,8 +204,18 @@ function Addwallet {
 echo " "
 echo -e "\e[1m\e[32mCreate you wallet... \e[0m" && sleep 1
 echo -e "\e[1m\e[31m **Important** Please write this mnemonic phrase in a safe place. \e[0m" && sleep 1
+echo " "
+echo " "
+echo -e "\e[1m\e[32mCreate WALLET ADDRESS... \e[0m" && sleep 1
 source $HOME/.bash_profile && celestia-appd keys add $WALLET
+echo " "
+echo " "
+echo " "
+echo -e "\e[1m\e[32mCreate ORCHESTRATOR ADDRESS... \e[0m" && sleep 1
 source $HOME/.bash_profile && celestia-appd keys add $ORWALLET
+echo " "
+echo " "
+echo " "
 echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${WALLET} -a)\e[0m" && sleep 1
 echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1    
 echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys show ${ORWALLET} -a)\e[0m" && sleep 1    
@@ -273,6 +283,7 @@ sudo sed -i '/CVALOPER_ADDRESS/d' $HOME/.bash_profile
 sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
 sudo sed -i '/EVM/d' $HOME/.bash_profile
 sudo sed -i '/ORCHESTRATOR_ADDRES/d' $HOME/.bash_profile
+sudo sed -i '/ORWALLET/d' $HOME/.bash_profile
 }
 
 
