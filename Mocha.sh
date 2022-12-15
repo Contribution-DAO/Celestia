@@ -240,7 +240,7 @@ echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show 
 echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys show ${ORWALLET} -a)\e[0m" && sleep 1    
 echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
 echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
-echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} --bech val -a) >> $HOME/.bash_profile
+echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} -a) >> $HOME/.bash_profile
 }
 
 function Checkbalances {
