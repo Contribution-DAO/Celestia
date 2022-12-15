@@ -260,8 +260,6 @@ celestia-appd tx staking create-validator \
 --amount=1000000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
 --moniker=$CNODENAME \
-#--identity=229038FB6DDE4BFE \
-#--details="Being In Love With You Makes Every Morning Worth Getting Up For." \
 --chain-id=mocha \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
