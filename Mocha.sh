@@ -150,7 +150,6 @@ echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys sh
 echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
 echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
 echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} --bech val -a) >> $HOME/.bash_profile
-celestia-appd keys add wallet --recover
 }
 
 
