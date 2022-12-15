@@ -130,7 +130,7 @@ sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.celest
 sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/config/app.toml
 }
 
-function Recoverwallet{
+function Recoverwallet {
 echo " "
 echo -e "\e[1m\e[32mRecovery Wallet... \e[0m" && sleep 1
 echo -e "\e[1m\e[31m Please write this mnemonic phrase. \e[0m" && sleep 1
