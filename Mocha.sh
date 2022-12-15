@@ -18,7 +18,7 @@ sleep 1
 function InstallingRequiredtool {
 echo -e "\e[1m\e[32mInstalling required tool ... \e[0m" && sleep 1
 sudo apt install curl -y > /dev/null 2>&1
-sudo apt update && apt install git sudo unzip wget -y > /dev/null 2>&1
+sudo apt update > /dev/null 2>&1 && apt install git sudo unzip wget -y > /dev/null 2>&1
 sudo apt install curl tar wget vim clang pkg-config libssl-dev jq build-essential git make ncdu -y > /dev/null 2>&1
 }
 
@@ -28,7 +28,7 @@ echo " "
 echo -e "\e[1m\e[32mInstalling Go ... \e[0m" && sleep 1
 ver="1.18.2"
 cd $HOME
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" 
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
