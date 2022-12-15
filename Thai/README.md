@@ -29,7 +29,7 @@ sudo su
 
 ```
 
-wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
+wget -q -O Mocha.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mocha.sh && chmod +x Mocha.sh && sudo /bin/bash Mocha.sh
 ```
 ![image](https://user-images.githubusercontent.com/83507970/204498896-b034857d-e020-4b0d-9fe7-e0175f059d38.png)
 
