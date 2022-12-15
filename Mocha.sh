@@ -271,6 +271,8 @@ sudo sed -i '/CWALLET/d' $HOME/.bash_profile
 sudo sed -i '/CWALLET_ADDRESS/d' $HOME/.bash_profile
 sudo sed -i '/CVALOPER_ADDRESS/d' $HOME/.bash_profile
 sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
+sudo sed -i '/EVM/d' $HOME/.bash_profile
+sudo sed -i '/ORCHESTRATOR_ADDRES/d' $HOME/.bash_profile
 }
 
 
