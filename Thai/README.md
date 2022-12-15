@@ -31,50 +31,60 @@ sudo su
 
 wget -q -O Mocha.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mocha.sh && chmod +x Mocha.sh && sudo /bin/bash Mocha.sh
 ```
-![image](https://user-images.githubusercontent.com/83507970/204498896-b034857d-e020-4b0d-9fe7-e0175f059d38.png)
+![image](https://user-images.githubusercontent.com/83507970/207964123-382545a1-1ad1-451e-8bc7-0069cab03330.png)
 
-เลือกหมายเลข 1 สำหรับการติดตั้งแบบไม่โหลด snap short แล้้วค่อยมา โหลด snap short ทีหลัง แนะนำสำหรับคนที่คิดว่า internet ไม่ค่อยดี เพราะ แบบนี้จะไม่ต้องมาลงใหม่หาก net หลุด 
-หากเลือกติดตั้งแบบ 1 เมื่อติดตั้งเสร็จให้จด seed ของตัวเองเอาไว้ด้วย หลังจากนั้นให้เลือก เมนู 4 เพื่อทำการ download sanp short เองอีกครั้ง 
+สำหรับคนที่ไม่เคยลงมาก่อน แนะนำให้ลงแบบ กดเลือกหมายเลข 2 ไปเลย
 
-เลือกหมายเลข 2 สำหรับการติดตั้งแบบโหลด snap short แนะนำให้เลือกข้อนี้สำหรับคนที่ internet ของ server แรง แต่อาจจะใช้เวลา sync นานหน่อย ตามความเร็ว internet ของ server 2 - 12 ชั่วโมง
 
-เมื่อถึงขั้นตอนการตั้งชื่อ Node Name and Wallet Name  ควรตั้งชื่อเป็น ภาษาอังกฤษ เท่านั้น ห้ามมีตัวอักษรพิเศษ อย่าลืมจด seed เก็บไว้ ถ้าไม่ได้จด จะไม่สามารถ recovery หรือ ย้าย wallet ได้
+สำหรับคนที่เคยลงมาแล้ว เอากระเป๋าไปตรวจสอบบน https://celestia.explorers.guru/ พบว่ายังมี Token อยู่ และ ได้จด seed ของกระเป็าใบนั่นเอาไว้
+ให้เลือกติดตั้งจากหมายเลข 3 
 
-เมื่อได้เลขกระเป็ามาแล้ว ให้เอาไปขอ Token ใน discord ของ celestia
+
+เมื่อ Script ถามหา EVM Adress ให้กรอก Address Metamask ลงไป แนะนำให้สร้างขึ้นมาใหม่ แล้วเอามากรอก
+เมื่อถึงขั้นตอนการตั้งชื่อ Node Name and Wallet Name  ควรตั้งชื่อเป็น ภาษาอังกฤษ เท่านั้น ห้ามมีตัวอักษรพิเศษ 
+
+หากเลือกติดตั้งแบบหมายเลข 3 เมื่อ script ทำงานไปสักพัก จะถามหา seed ของกระเป๋าใบเก่า ให้นำมากรอก แล้ว กด enter
+![image](https://user-images.githubusercontent.com/83507970/207965395-5d1f2601-65b1-46d1-9f3a-a3c547044a1c.png)
+
+
+เมื่อ script ติดตั้งเสร็จจะแสดงข้อมูล seed อย่าลืมจดเก็บไว้นะ
+เมนู 2 จะสร้างเป่าขึ้นมา 2 ใบ ต้องจดทั้ง 2 ใบ
+เมนู 3 จะสร้างเป่าขึ้นมา 1 ใบ 
+
+ติดตั้งเสร็จ check balance มีก็กด 7 เพื่อสร้าง validator ต่อได้เลย
 
 หลังจากติดตั้งแล้ว สามารถ พิมพ์ 3 แล้ว enter เพือดู block sync ได้
 หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
 
 
 
-## 3. ตรวจสอบ Block sync จากเมนูหมายเลข 3
+## 3. ตรวจสอบ Block sync จากเมนูหมายเลข 4
 
-![image](https://user-images.githubusercontent.com/83507970/204498908-08c71226-849e-45da-8c1f-00808d000f12.png)
+![image](https://user-images.githubusercontent.com/83507970/207965965-076c6195-1b30-440e-8fb0-559cd7f6d587.png)
 
-สามารถกดดูได้เรื่อย ๆ โดยการพิมพ์ 3 แล้ว enter หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
-
-
+สามารถกดดูได้เรื่อย ๆ โดยการพิมพ์ 4 แล้ว enter หากต้องการออกจาก เมนูให้ พิมพ์ 12 แล้ว enter
 
 
-## 4. ตรวจสอบ Balance  จากเมนูหมายเลข 5
-
-![image](https://user-images.githubusercontent.com/83507970/204498916-288312ed-99e0-4038-9577-3f0ad38d686b.png)
-
-หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
 
 
-## 5. สร้าง validator node จากเมนูหมายเลข 6
+## 4. ตรวจสอบ Balance  จากเมนูหมายเลข 6
+
+![image](https://user-images.githubusercontent.com/83507970/207965810-2aa666c3-1f83-4563-9a18-cf0346087e5b.png)
+
+หากต้องการออกจาก เมนูให้ พิมพ์ 12 แล้ว enter
+
+
+## 5. สร้าง validator node จากเมนูหมายเลข 7
 ก่อนจะรันคำสั่งนี้ ต้องตรวจสอบ Block sync และ ได้ balance แล้ว 
-![image](https://user-images.githubusercontent.com/83507970/204498930-4996a60c-1d1e-46ce-818f-666a7534300e.png)
-
-หากต้องการออกจาก เมนูให้ พิมพ์ 10 แล้ว enter
 
 
-## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 9
+หากต้องการออกจาก เมนูให้ พิมพ์ 12 แล้ว enter
+
+
+## 6. สำหรับคนที่อยากลบลงใหม่ ให้เลือกเมนู ข้อ 10
 หลังจากลบเรียบร้อยแล้ว ให้กดปิดหน้าจอ server ไป แล้วเปิดขึ้นมาใหม่ ถึงทำการ install ใหม่อีกครั้งนะ
 
 ![image](https://user-images.githubusercontent.com/83507970/204498941-76c4fe6c-f7f5-48e9-a996-e748c33f983f.png)
-
 
 
 
@@ -124,58 +134,3 @@ source $HOME/.bash_profile && celestia-appd keys show $CWALLET --bech val -a
 
 
 
-
-
-## คำแนะนำสำหรับการติดตั้งบน google cloud
-
-1. เปลี่ยนเป็น root user และ download script ติดตั้งจาก 
-```
-sudo su
-```
-
-```
-wget -q -O Celestia_node.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Celestia_node.sh && chmod +x Celestia_node.sh && sudo /bin/bash Celestia_node.sh
-```
-
-เมื่อ script ทำงานแล้วจะได้หน้าจอเมนู 1-10 ขึ้นมา
-ให้พิมพ์ 1 แล้วกด enter เพื่อทำการติดตั้ง node celestia ซึ่งจะใช้เวลาประมาณ 5 - 10 นาที ในการติดตั้ง 
-
-![image](https://user-images.githubusercontent.com/83507970/204750852-2887ffbe-6cd7-4327-8ee9-7e6112a3414c.png)
-
-* ระหว่างการติดตั้ง script จะให้ตั้งชื่อ Wallet name และ Node name ควรตั้งเป็นภาษาอังกฤษ และ ตัวเลขเท่านั่น
-** เมื่อติดตั้งเสร็จ script จะแสดงข้อมูล seed ให้เราเห็น ให้บรรทึก seed เก็บไว้ให้ดี ห้ามลิมโดยเด็ดขาด
-
-2. ติดตั้ง tmux และ ทำการ download snap short
-
-```
-sudo apt install tmux
-```
-
-หลังจากติดตั้งเรียบร้อยแล้วให้เรียกใช้งาน tmux โดยใช้คำสั่ง
-```
-sudo tmux new -s sync
-```
-
-ทำการ download snap short โดยเรียกใช้คำสั่งจากด้านล่างนี้ และ พิมพ์ 4 และ enter
-```
-sudo /bin/bash Celestia_node.sh
-```
-![image](https://user-images.githubusercontent.com/83507970/204751920-7f38edcc-e258-4420-862d-60d33cb10847.png)
-
-ระยะเวลาโดยประมาณขึ่นอยู่กับความเร็ว internet ของ server ซึ่งอยู่ระหว่าง 2 - 20 ชม. โดยประมาณ
-
-
-สามารถปิดหน้าจอ console ของ google clound ทิ้งไปได้เลย แล้วค่อยกลับมาตรวจสอบอีกครั้งตามระยะเวลาที่แจ้งให้ทราบว่าต้องใช้เวลา download ประมาณกี่ชั่วโมง
-หากต้องการดูว่า download ไปถึงไหนแล้ว ให้เปิดหน้าจอ console ของ google clound ขึ้นมา
-
-```
-sudo su
-```
-
-```
-tmux a -t sync
-```
-
-
-เมื่อตรวจสอบว่า download snap short เรียบร้อยแล้วให้ไปทำตาม step ด้านล่างต่อไป
-https://github.com/Contribution-DAO/Celestia/edit/main/Thai/README.md#3-%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A-block-sync-%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%82-3
