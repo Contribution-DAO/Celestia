@@ -253,10 +253,10 @@ source $HOME/.bash_profile && celestia-appd query bank balances $CWALLET_ADDRESS
 function CreateValidator {
 echo " "
 echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1
+ source $HOME/.bash_profile  
   
   
-  
-  celestia-appd tx staking create-validator \
+celestia-appd tx staking create-validator \
 --amount=1000000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
 --moniker=$CNODENAME \
