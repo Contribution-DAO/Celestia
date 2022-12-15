@@ -17,9 +17,9 @@ sleep 1
 
 function InstallingRequiredtool {
 echo -e "\e[1m\e[32mInstalling required tool ... \e[0m" && sleep 1
-sudo apt install curl -y < "/dev/null"
-sudo apt update && apt install git sudo unzip wget -y < "/dev/null"
-sudo apt install curl tar wget vim clang pkg-config libssl-dev jq build-essential git make ncdu -y < "/dev/null"
+sudo apt install curl -y > /dev/null 2>&1
+sudo apt update && apt install git sudo unzip wget -y > /dev/null 2>&1
+sudo apt install curl tar wget vim clang pkg-config libssl-dev jq build-essential git make ncdu -y > /dev/null 2>&1
 }
 
 
@@ -63,14 +63,15 @@ echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
 if [ ! $CWALLET ]; then
-read -p "Insert Primary Wallet name: " WALLET && sleep 2
+read -p "Insert Wallet name: " WALLET && sleep 2
 echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
+echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
 fi
 
-if [ ! $ORCHESTRATORWALLET ]; then
-read -p "Insert ORCHESTRATOR Wallet name: " ORWALLET && sleep 2
-echo 'export ORWALLET='${ORWALLET} >> $HOME/.bash_profile
-fi
+#if [ ! $ORCHESTRATORWALLET ]; then
+#read -p "Insert ORCHESTRATOR Wallet name: " ORWALLET && sleep 2
+#echo 'export ORWALLET='${ORWALLET} >> $HOME/.bash_profile
+#fi
 
 source $HOME/.bash_profile
 celestia-appd config chain-id mocha
