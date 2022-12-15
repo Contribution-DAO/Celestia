@@ -130,12 +130,27 @@ sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.celest
 sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/config/app.toml
 }
 
-function IN_Recovery_old_wallet {
+function Recoverwallet{
 echo " "
-echo -e "\e[1m\e[32mSet Pruning... \e[0m" && sleep 1
-sed -i 's|pruning = "default"|pruning = "custom"|g' $HOME/.celestia-app/config/app.toml
-sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.celestia-app/config/app.toml
-sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/config/app.toml
+echo -e "\e[1m\e[32mRecovery Wallet... \e[0m" && sleep 1
+echo -e "\e[1m\e[31m Please write this mnemonic phrase. \e[0m" && sleep 1
+echo " "
+source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
+echo " "
+echo " "
+echo " "
+echo -e "\e[1m\e[32mCreate ORCHESTRATOR ADDRESS... \e[0m" && sleep 1
+source $HOME/.bash_profile && celestia-appd keys add $ORWALLET
+echo " "
+echo " "
+echo " "
+echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${WALLET} -a)\e[0m" && sleep 1
+echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1    
+echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys show ${ORWALLET} -a)\e[0m" && sleep 1    
+echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
+echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
+echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} --bech val -a) >> $HOME/.bash_profile
+celestia-appd keys add wallet --recover
 }
 
 
@@ -298,7 +313,7 @@ sudo sed -i '/ORWALLET/d' $HOME/.bash_profile
 
 
 PS3='Please enter your choice (input your option number and press enter): '
-options=("Install" "Install + Snap" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Add Peer" "Quit")
+options=("Install" "Install + Snap" "Install + Snap with old wallet" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Add Peer" "Quit")
 
 select opt in "${options[@]}"
 do
@@ -336,6 +351,25 @@ setP2PConfigurationOptions
 Syncsnap
 Restart
 Addwallet
+echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
+
+;;
+
+"Install + Snap with old wallet")
+            echo -e '\e[1m\e[32mYou choose Install with Snapshort ...\e[0m' && sleep 1
+InstallingRequiredtool
+InstallingGo
+Installingcelestia-app
+Createwallet
+SetchainID
+Setupgenesis
+Setseedsandpeers
+Setpruning
+Setsystemd
+setP2PConfigurationOptions
+Syncsnap
+Restart
+Recoverwallet
 echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
 
 ;;
