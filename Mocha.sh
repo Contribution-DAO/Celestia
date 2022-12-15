@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 echo -e "\033[0;33m"
 echo "==========================================================================================================================="
@@ -133,7 +131,7 @@ sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/
 function Recoverwallet {
 echo " "
 echo -e "\e[1m\e[32mRecovery Wallet... \e[0m" && sleep 1
-echo -e "\e[1m\e[31m Please write this mnemonic phrase. \e[0m" && sleep 1
+echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
 echo " "
 source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
 echo " "
