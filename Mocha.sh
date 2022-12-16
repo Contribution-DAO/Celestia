@@ -287,7 +287,7 @@ sleep 10
 function Delegate {
 echo " "
 echo -e "\e[1m\e[32mDelegate Token to you validator ... \e[0m" && sleep 1
-YBalance=$(celestia-appd query bank balances $CWALLET_ADDRESS  |grep amount |awk -F"\"" '{print $2}')
+YBalance=$(source $HOME/.bash_profile && celestia-appd query bank balances $CWALLET_ADDRESS  |grep amount |awk -F"\"" '{print $2}')
 echo "You utia Balance $YBalance"
 #read -p "Insert utia need Delegate : " ToDelegate && sleep 2
 CanDelegate=$((YBalance - 30000))
