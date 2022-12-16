@@ -284,12 +284,11 @@ sleep 10
 }
 
 
-function Restoreconfig {
+function Delegate {
 echo " "
 echo -e "\e[1m\e[32mRestore Config ... \e[0m" && sleep 1
-sudo systemctl stop celestia-appd 
-wget -qO $HOME/.celestia-app/config/config.toml https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/config/config.toml
-sudo systemctl start celestia-appd
+read -p "Insert Token need Delegate : " ToDelegate && sleep 2
+celestia-appd tx staking delegate $CVALOPER_ADDRESS ${ToDelegate}00000utia --from=CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
 }
 
 
@@ -312,7 +311,7 @@ sudo sed -i '/ORWALLET/d' $HOME/.bash_profile
 
 
 PS3='Please enter your choice (input your option number and press enter): '
-options=("Install" "Install + Snap" "Install + Snap with old wallet" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Restore Config" "Uninstall" "Add Peer" "Quit")
+options=("Install" "Install + Snap" "Install + Snap with old wallet" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Delegate" "Uninstall" "Add Peer" "Quit")
 
 select opt in "${options[@]}"
 do
@@ -409,10 +408,10 @@ echo -e "\e[1m\e[32mRestart You Node complete!\e[0m" && sleep 1
 
 ;;
 
-"Restore Config")
-echo -e '\e[1m\e[32mYou choose Restore Config.toml ...\e[0m' && sleep 1
-Restoreconfig
-echo -e "\e[1m\e[32mRestore Config.toml complete!\e[0m" && sleep 1
+"Delegate")
+echo -e '\e[1m\e[32mYou choose Delegate ...\e[0m' && sleep 1
+Delegate
+echo -e "\e[1m\e[32mDelegate complete!\e[0m" && sleep 1
 
 ;;
 
