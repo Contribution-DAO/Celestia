@@ -255,8 +255,8 @@ source $HOME/.bash_profile && celestia-appd query bank balances $CWALLET_ADDRESS
 
 function CreateValidator {
 echo " "
-echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1
- source $HOME/.bash_profile  
+echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1 
+source $HOME/.bash_profile  
   
   
 celestia-appd tx staking create-validator \
@@ -288,7 +288,7 @@ function Delegate {
 echo " "
 echo -e "\e[1m\e[32mDelegate Token to you validator ... \e[0m" && sleep 1
 read -p "Insert Token need Delegate : " ToDelegate && sleep 2
-celestia-appd tx staking delegate $CVALOPER_ADDRESS ${ToDelegate}00000utia --from=CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
+source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${ToDelegate}00000utia --from=CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
 }
 
 
