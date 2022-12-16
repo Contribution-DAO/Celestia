@@ -286,7 +286,7 @@ sleep 10
 
 function Delegate {
 echo " "
-echo -e "\e[1m\e[32mRestore Config ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32mDelegate Token to you validator ... \e[0m" && sleep 1
 read -p "Insert Token need Delegate : " ToDelegate && sleep 2
 celestia-appd tx staking delegate $CVALOPER_ADDRESS ${ToDelegate}00000utia --from=CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
 }
