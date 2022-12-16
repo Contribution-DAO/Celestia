@@ -287,8 +287,11 @@ sleep 10
 function Delegate {
 echo " "
 echo -e "\e[1m\e[32mDelegate Token to you validator ... \e[0m" && sleep 1
-read -p "Insert Token need Delegate : " ToDelegate && sleep 2
-source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${ToDelegate}00000utia --from=CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
+YBalance=$(celestia-appd query bank balances $CWALLET_ADDRESS  |grep amount |awk -F"\"" '{print $2}')
+echo "You utia Balance $YBalance"
+#read -p "Insert utia need Delegate : " ToDelegate && sleep 2
+CanDelegate=$((YBalance - 30000))
+source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${CanDelegate}utia --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
 }
 
 
@@ -411,7 +414,7 @@ echo -e "\e[1m\e[32mRestart You Node complete!\e[0m" && sleep 1
 "Delegate")
 echo -e '\e[1m\e[32mYou choose Delegate ...\e[0m' && sleep 1
 Delegate
-echo -e "\e[1m\e[32mDelegate complete!\e[0m" && sleep 1
+echo -e "\e[1m\e[32mDelegate Complete!\e[0m" && sleep 1
 
 ;;
 
