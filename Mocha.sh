@@ -257,7 +257,7 @@ echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1
   
   
 celestia-appd tx staking create-validator \
---amount=10000000utia \
+--amount=9800000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
 --moniker=$CNODENAME \
 --chain-id=mocha \
