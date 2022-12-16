@@ -260,7 +260,7 @@ source $HOME/.bash_profile
   
   
 celestia-appd tx staking create-validator \
---amount=9800000utia \
+--amount=9500000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
 --moniker=$CNODENAME \
 --chain-id=mocha \
