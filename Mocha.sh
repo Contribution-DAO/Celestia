@@ -274,10 +274,10 @@ celestia-appd tx staking create-validator \
 --gas=auto \
 -y
   
-  sleep 60
+sleep 10
   
-celestia-appd tx slashing unjail --from=$CWALLET_ADDRESS --chain-id=mocha -y
- echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
+celestia-appd tx slashing unjail --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
+echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
 }
 
 
