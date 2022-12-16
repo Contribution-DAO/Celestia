@@ -235,8 +235,8 @@ source $HOME/.bash_profile && celestia-appd keys add $ORWALLET
 echo " "
 echo " "
 echo " "
-echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${WALLET} -a)\e[0m" && sleep 1
-echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1    
+echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${CWALLET} -a)\e[0m" && sleep 1
+echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1    
 echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys show ${ORWALLET} -a)\e[0m" && sleep 1    
 echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
 echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
@@ -276,8 +276,8 @@ celestia-appd tx staking create-validator \
   
 sleep 10
   
-celestia-appd tx slashing unjail --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
-echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
+#celestia-appd tx slashing unjail --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
+#echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
 }
 
 
@@ -394,7 +394,7 @@ echo -e "\e[1m\e[32mDownload Snapshot complete!\e[0m" && sleep 1
 "Create Validator")
 echo -e '\e[1m\e[32mYou choose Create Validator ...\e[0m' && sleep 1
 CreateValidator
-echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1
+echo -e "\e[1m\e[34mYour Celestia Validator address : $(celestia-appd keys show ${CWALLET} --bech val -a)\e[0m" && sleep 1
 
 ;;
 
