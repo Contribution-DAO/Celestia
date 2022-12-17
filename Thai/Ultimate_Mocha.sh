@@ -73,10 +73,6 @@ echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
 if [ ! $CWALLET ]; then
-#read -p "Insert Wallet name: " WALLET && sleep 2
-#echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
-#echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
-
 while true; do
   read -p "Insert wallet name: " WALLET
   if [[ $WALLET =~ ^[a-zA-Z0-9]+$ ]]; then
@@ -285,7 +281,7 @@ echo -e "\e[1m\e[31m **Important** Please write this mnemonic phrase in a safe p
 echo " "
 echo " "
 echo -e "\e[1m\e[32mCreate WALLET ADDRESS... \e[0m" && sleep 1
-source $HOME/.bash_profile && celestia-appd keys add $WALLET
+source $HOME/.bash_profile && celestia-appd keys add $CWALLET
 echo " "
 echo " "
 echo " "
