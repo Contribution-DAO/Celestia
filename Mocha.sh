@@ -294,8 +294,8 @@ celestia-appd tx staking create-validator \
 --evm-address=$EVM \
 --orchestrator-address=$ORCHESTRATOR_ADDRES \
 --fees=1000utia \
---gas=auto \
---gas-adjustment=1.5 \
+--gas auto \
+--gas-adjustment 1.4 \
 -y
   
 sleep 10
