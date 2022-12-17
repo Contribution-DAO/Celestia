@@ -277,9 +277,7 @@ source $HOME/.bash_profile && celestia-appd query bank balances $CWALLET_ADDRESS
 function CreateValidator {
 echo " "
 echo -e "\e[1m\e[32mCreate Validator ... \e[0m" && sleep 1 
-source $HOME/.bash_profile  
-  
-  
+source $HOME/.bash_profile && sleep 1 
 celestia-appd tx staking create-validator \
 --amount=9000000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
@@ -313,8 +311,8 @@ echo -e "\e[1m\e[34mYou utia Balance : ${YBalance}\e[0m" && sleep 1
 echo " "
 echo " "
 #read -p "Insert utia need Delegate : " ToDelegate && sleep 2
-CanDelegate=$((YBalance - 50000))
-source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${CanDelegate}utia --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.3 --gas=auto -y
+CanDelegate=$((YBalance - 2000000))
+source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${CanDelegate}utia --from=$CWALLET_ADDRESS --chain-id=mocha --fees 5000utia --gas 1000000 --gas-adjustment 1.3 -y
 }
 
 
