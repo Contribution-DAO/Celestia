@@ -34,7 +34,7 @@ sudo su
 
 ```
 
-wget -q -O Mocha.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Mocha.sh && chmod +x Mocha.sh && sudo /bin/bash Mocha.sh
+wget -q -O Ultimate_Mocha.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Thai/Ultimate_Mocha.sh && chmod +x Ultimate_Mocha.sh && sudo /bin/bash Ultimate_Mocha.sh
 ```
 ![image](https://user-images.githubusercontent.com/83507970/207964123-382545a1-1ad1-451e-8bc7-0069cab03330.png)
 
