@@ -147,6 +147,12 @@ echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
 echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
 fi
 echo " "
+
+source $HOME/.bash_profile
+celestia-appd config chain-id mocha
+celestia-appd config keyring-backend test
+sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
+
 echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
 echo " "
 source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
@@ -166,10 +172,7 @@ echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys sh
 echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
 echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
 echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} -a) >> $HOME/.bash_profile
-source $HOME/.bash_profile
-celestia-appd config chain-id mocha
-celestia-appd config keyring-backend test
-sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
+
 }
 
 
