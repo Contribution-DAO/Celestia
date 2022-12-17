@@ -132,9 +132,21 @@ sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.celest
 sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/config/app.toml
 }
 
+
 function Recoverwallet {
 echo " "
 echo -e "\e[1m\e[32mRecovery Wallet... \e[0m" && sleep 1
+if [ ! $CNODENAME ]; then
+read -p "Insert node name: " NODENAME && sleep 2
+echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
+fi
+echo " "
+if [ ! $CWALLET ]; then
+read -p "Insert Wallet name: " WALLET && sleep 2
+echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
+echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
+fi
+echo " "
 echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
 echo " "
 source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
