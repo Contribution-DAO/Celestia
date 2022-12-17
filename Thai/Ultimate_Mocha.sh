@@ -167,7 +167,7 @@ while true; do
 done
 echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
-
+echo " "
 
 if [ ! $CWALLET ]; then
 while true; do
@@ -190,7 +190,7 @@ sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/co
 
 echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
 echo " "
-source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
+source $HOME/.bash_profile && celestia-appd keys add $CWALLET --recover
 echo " "
 echo " "
 echo " "
