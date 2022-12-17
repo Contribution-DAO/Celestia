@@ -89,8 +89,6 @@ echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
 echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
 fi
 
-fi
-
 #if [ ! $ORCHESTRATORWALLET ]; then
 #read -p "Insert ORCHESTRATOR Wallet name: " ORWALLET && sleep 2
 #echo 'export ORWALLET='${ORWALLET} >> $HOME/.bash_profile
