@@ -19,6 +19,8 @@ The following hardware minimum requirements are recommended for running the vali
 
 ## 1. ขั้นตอนแรกให้ทำการเปลี่ยน user เป็น root ก่อนทุกครั้ง
 
+คลิปตัวอย่างการติดตั้งแบบ Recover กระเป็าเดิม โดยใช้ seed ที่จดเก็บเอาไว้ : https://www.youtube.com/watch?v=kROjzpeOA8E
+
 ```
 
 sudo su
