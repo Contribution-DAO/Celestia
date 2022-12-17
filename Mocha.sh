@@ -293,6 +293,8 @@ celestia-appd tx staking create-validator \
 --keyring-backend=test \
 --evm-address=$EVM \
 --orchestrator-address=$ORCHESTRATOR_ADDRES \
+--gas-adjustment=1.3 
+--gas=auto
 --fees 1000utia \
 -y
   
@@ -313,7 +315,7 @@ echo " "
 echo " "
 #read -p "Insert utia need Delegate : " ToDelegate && sleep 2
 CanDelegate=$((YBalance - 50000))
-source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${CanDelegate}utia --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.4 --gas=auto -y
+source $HOME/.bash_profile && celestia-appd tx staking delegate $CVALOPER_ADDRESS ${CanDelegate}utia --from=$CWALLET_ADDRESS --chain-id=mocha --fees 1000utia --gas-adjustment=1.3 --gas=auto -y
 }
 
 
