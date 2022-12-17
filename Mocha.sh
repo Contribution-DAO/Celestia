@@ -293,9 +293,9 @@ celestia-appd tx staking create-validator \
 --keyring-backend=test \
 --evm-address=$EVM \
 --orchestrator-address=$ORCHESTRATOR_ADDRES \
---gas-adjustment=1.3 
---gas=auto
---fees 1000utia \
+--fees=1000utia \
+--gas=auto \
+--gas-adjustment=1.5 \
 -y
   
 sleep 10
