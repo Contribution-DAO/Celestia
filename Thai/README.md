@@ -19,7 +19,10 @@ The following hardware minimum requirements are recommended for running the vali
 
 ## 1. ขั้นตอนแรกให้ทำการเปลี่ยน user เป็น root ก่อนทุกครั้ง
 
-คลิปตัวอย่างการติดตั้งแบบ Recover กระเป็าเดิม โดยใช้ seed ที่จดเก็บเอาไว้ : https://www.youtube.com/watch?v=kROjzpeOA8E
+คลิปตัวอย่างการติดตั้งแบบออโต้ : https://youtu.be/eUOCliTndK4
+
+
+คลิปตัวอย่างการติดตั้งแบบ Recover กระเป็าเดิม โดยใช้ seed ที่จดเก็บเอาไว้ : https://youtu.be/kROjzpeOA8E
 
 ```
 
@@ -87,7 +90,8 @@ wget -q -O Mocha.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/
 หลังจากลบเรียบร้อยแล้ว ให้กดปิดหน้าจอ server ไป แล้วเปิดขึ้นมาใหม่ ถึงทำการ install ใหม่อีกครั้งนะ
 
 
-
+## 7. สำหรับคนขอ Token เพิ่มมาแล้วอยาก Delegate ก็เลือกเมนู 9
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/83507970/208239409-0050a302-9ec8-4210-93cf-445b6cdb78d4.gif)
 
 
 
