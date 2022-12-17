@@ -156,14 +156,28 @@ sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.celestia-app/
 
 function Recoverwallet {
 echo " "
-echo -e "\e[1m\e[32mRecovery Wallet... \e[0m" && sleep 1
 if [ ! $CNODENAME ]; then
-read -p "Insert node name: " NODENAME && sleep 2
+while true; do
+  read -p "Insert node name: " NODENAME
+  if [[ $NODENAME =~ ^[a-zA-Z0-9]+$ ]]; then
+    break
+  else
+    echo "Error: Please enter only text and numbers."
+  fi
+done
 echo 'export CNODENAME='$NODENAME >> $HOME/.bash_profile
 fi
-echo " "
+
+
 if [ ! $CWALLET ]; then
-read -p "Insert Wallet name: " WALLET && sleep 2
+while true; do
+  read -p "Insert wallet name: " WALLET
+  if [[ $WALLET =~ ^[a-zA-Z0-9]+$ ]]; then
+    break
+  else
+    echo "Error: Please enter only text and numbers."
+  fi
+done
 echo 'export CWALLET='${WALLET} >> $HOME/.bash_profile
 echo 'export ORWALLET='ORCHESTRATOR_${WALLET} >> $HOME/.bash_profile
 fi
