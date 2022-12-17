@@ -22,7 +22,7 @@ The following hardware minimum requirements are recommended for running the vali
 คลิปตัวอย่างการติดตั้งแบบออโต้ : https://youtu.be/eUOCliTndK4
 
 
-คลิปตัวอย่างการติดตั้งแบบ Recover กระเป็าเดิม โดยใช้ seed ที่จดเก็บเอาไว้ : https://youtu.be/kROjzpeOA8E
+คลิปตัวอย่างการติดตั้งแบบ Recover กระเป๋าเดิม โดยใช้ seed ที่จดเก็บเอาไว้ : https://youtu.be/kROjzpeOA8E
 
 ```
 
