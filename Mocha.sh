@@ -155,7 +155,7 @@ sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/co
 
 echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
 echo " "
-source $HOME/.bash_profile && celestia-appd keys add $WALLET --recover
+source $HOME/.bash_profile && celestia-appd keys add $CWALLET --recover
 echo " "
 echo " "
 echo " "
@@ -250,7 +250,7 @@ echo -e "\e[1m\e[31m **Important** Please write this mnemonic phrase in a safe p
 echo " "
 echo " "
 echo -e "\e[1m\e[32mCreate WALLET ADDRESS... \e[0m" && sleep 1
-source $HOME/.bash_profile && celestia-appd keys add $WALLET
+source $HOME/.bash_profile && celestia-appd keys add $CWALLET
 echo " "
 echo " "
 echo " "
