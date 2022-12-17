@@ -327,6 +327,10 @@ sudo sed -i '/CNODENAME/d' $HOME/.bash_profile
 sudo sed -i '/EVM/d' $HOME/.bash_profile
 sudo sed -i '/ORCHESTRATOR_ADDRES/d' $HOME/.bash_profile
 sudo sed -i '/ORWALLET/d' $HOME/.bash_profile
+sudo sed -i '/NODENAME/d' $HOME/.bash_profile
+sudo sed -i '/WALLET/d' $HOME/.bash_profile
+sudo sed -i '/WALLET_ADDRESS/d' $HOME/.bash_profile
+sudo sed -i '/VALOPER_ADDRESS/d' $HOME/.bash_profile
 }
 
 
