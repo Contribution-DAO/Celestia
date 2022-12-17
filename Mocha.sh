@@ -146,12 +146,18 @@ source $HOME/.bash_profile && celestia-appd keys add $ORWALLET
 echo " "
 echo " "
 echo " "
+read -p "Insert Metamask Address: " EVM && sleep 2
+echo 'export EVM='$EVM >> $HOME/.bash_profile
 echo -e "\e[1m\e[33mYour celestia Wallet address : $(celestia-appd keys show ${WALLET} -a)\e[0m" && sleep 1
 echo -e "\e[1m\e[34mYour celestia Validator address : $(celestia-appd keys show ${WALLET} --bech val -a)\e[0m" && sleep 1    
 echo -e "\e[1m\e[34mYour celestia ORCHESTRATOR address : $(celestia-appd keys show ${ORWALLET} -a)\e[0m" && sleep 1    
 echo 'export CWALLET_ADDRESS='$(celestia-appd keys show ${CWALLET} -a) >> $HOME/.bash_profile
 echo 'export CVALOPER_ADDRESS='$(celestia-appd keys show ${CWALLET} --bech val -a) >> $HOME/.bash_profile
-echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} --bech val -a) >> $HOME/.bash_profile
+echo 'export ORCHESTRATOR_ADDRES='$(celestia-appd keys show ${ORWALLET} -a) >> $HOME/.bash_profile
+source $HOME/.bash_profile
+celestia-appd config chain-id mocha
+celestia-appd config keyring-backend test
+sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
 }
 
 
@@ -364,7 +370,8 @@ echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
 InstallingRequiredtool
 InstallingGo
 Installingcelestia-app
-Createwallet
+Recoverwallet
+#Createwallet
 SetchainID
 Setupgenesis
 Setseedsandpeers
@@ -373,7 +380,6 @@ Setsystemd
 setP2PConfigurationOptions
 Syncsnap
 Restart
-Recoverwallet
 echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
 
 ;;
