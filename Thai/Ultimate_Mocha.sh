@@ -367,7 +367,7 @@ sudo sed -i '/VALOPER_ADDRESS/d' $HOME/.bash_profile
 
 
 
-
+echo -e "\e[1m\e[32mMenu V1.2 \e[0m" && sleep 1
 
 PS3='Please enter your choice (input your option number and press enter): '
 options=("Install" "Install + Snap" "Install + Snap with old wallet" "Check Sync" "Snapshort" "Check Balance" "Create Validator" "Restart" "Delegate" "Uninstall" "Add Peer" "Quit")
