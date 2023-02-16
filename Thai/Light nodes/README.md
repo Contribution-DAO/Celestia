@@ -45,7 +45,7 @@ sudo journalctl -u celestia-lightd.service -f --no-hostname
 sudo systemctl stop celestia-lightd
 ```
 
-4.2 Start node ใหม่อีกครั้ง โดยเปลี่ยน YOU_KEY_NAME เป็นชื่อ KEY ที่ได้มาตอนติดตั้งจาก script ด้านบน
+4.2 ทำการ set up config & Start node ใหม่อีกครั้ง โดยเปลี่ยน YOU_KEY_NAME เป็นชื่อ KEY ที่ได้มาตอนติดตั้งจาก script ด้านบน
 
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
@@ -63,7 +63,8 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 EOF
-
+```
+```
 sudo systemctl enable celestia-lightd
 sudo systemctl start celestia-lightd
 ```
