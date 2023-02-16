@@ -19,8 +19,21 @@ Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 sudo su
 ```
 
-## 1. ขั้นตอนแรกให้ทำการเปลี่ยน user เป็น root ก่อนทุกครั้ง
+## 2. ติดตั้งจาก script
 
 ```
 wget -q -O lightnodes.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Thai/Light%20nodes/lightnodes.sh && chmod +x lightnodes.sh && sudo /bin/bash lightnodes.sh
+```
+
+## 3. ตรวจสอบการทำงาน ของ node 
+
+```
+sudo systemctl status celestia-lightd
+```
+
+
+## 4. ตรวจสอบ logs ของ node 
+
+```
+sudo journalctl -u celestia-lightd.service -f --no-hostname
 ```
