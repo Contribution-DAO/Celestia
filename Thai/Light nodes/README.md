@@ -1,7 +1,7 @@
-# ขั้นตอนการติดตั้ง Node Celestia
+# ขั้นตอนการติดตั้ง Celestia Light node
 
-## ความต้องการของเครื่องในการทำ Validator node
-The following hardware minimum requirements are recommended for running the validator node:
+## ความต้องการของเครื่องในการทำ Light node
+The following hardware minimum requirements are recommended for running the Light node:
 
 >:black_square_button:  OS Ubuntu 20.04 (LTS) x64<br> 
 
