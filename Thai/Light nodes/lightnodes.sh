@@ -60,3 +60,18 @@ EOF
 
 sudo systemctl enable celestia-lightd
 sudo systemctl start celestia-lightd
+
+
+echo " "
+echo " "
+echo -e "\e[1m\e[32mCreate Keys and wallets ... \e[0m" && sleep 1
+cd $HOME/celestia-node/ 
+while true; do
+read -p "Insert key name: " key_name
+if [[ $key_name =~ ^[a-zA-Z0-9]+$ ]]; then
+break
+else
+echo "Error: Please enter only text and numbers."
+fi
+done
+./cel-key add $key_name --keyring-backend test --node.type light --p2p.network mocha
