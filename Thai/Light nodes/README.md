@@ -24,6 +24,7 @@ sudo su
 ```
 wget -q -O lightnodes.sh https://raw.githubusercontent.com/Contribution-DAO/Celestia/main/Thai/Light%20nodes/lightnodes.sh && chmod +x lightnodes.sh && sudo /bin/bash lightnodes.sh
 ```
+### เมื่อ script ทำงานไปถึงขั้นตอนสุดท้าย จะให้ตั้งชื่อ KEY หลังจากใส่ชื่อ KEY ลงไปแล้ว จะได้ Address และ mnemonic phrase ออกมา ให้ทำการจดบันทึกเก็บไว้ให้ดีนะ
 
 ## 3. ตรวจสอบการทำงาน ของ node 
 
@@ -37,3 +38,16 @@ sudo systemctl status celestia-lightd
 ```
 sudo journalctl -u celestia-lightd.service -f --no-hostname
 ```
+
+## กรณีที่ต้อง start node ด้วย key ของตัวเอง
+4.1 stop node 
+```
+sudo systemctl stop celestia-lightd
+```
+
+4.2 Start node ใหม่อีกครั้ง โดยเปลี่ยน YOU_KEY_NAME เป็นชื่อ KEY ที่ได้มาตอนติดตั้งจาก script ด้านบน
+```
+celestia light start --core.ip https://grpc-mocha.pops.one/ --core.grpc.port 9090 --keyring.accname YOU_KEY_NAME --gateway --gateway.addr localhost --gateway.port 26659 --p2p.network mocha
+```
+
+
