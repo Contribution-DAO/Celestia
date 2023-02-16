@@ -39,7 +39,7 @@ sudo systemctl status celestia-lightd
 sudo journalctl -u celestia-lightd.service -f --no-hostname
 ```
 
-## กรณีที่ต้องทาง celestia แจ้งให้ start node ด้วย key ของตัวเอง
+## กรณีที่ทาง celestia แจ้งให้ start node ด้วย key ของตัวเอง
 4.1 stop node 
 ```
 sudo systemctl stop celestia-lightd
