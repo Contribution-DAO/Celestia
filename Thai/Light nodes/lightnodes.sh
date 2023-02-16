@@ -8,7 +8,7 @@ sudo apt install curl tar wget vim clang pkg-config libssl-dev jq build-essentia
 
 
 echo -e "\e[1m\e[32mInstalling Go ... \e[0m" && sleep 1
-ver="1.18.2"
+ver="1.19.1"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" 
 sudo rm -rf /usr/local/go
