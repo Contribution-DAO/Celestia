@@ -22,5 +22,5 @@ sudo su
 ## 1. ขั้นตอนแรกให้ทำการเปลี่ยน user เป็น root ก่อนทุกครั้ง
 
 ```
-sudo su
+wget -q -O lightnodes.sh https://github.com/Contribution-DAO/Celestia/blob/main/Thai/Light%20nodes/lightnodes.sh && chmod +x lightnodes.sh && sudo /bin/bash lightnodes.sh
 ```
