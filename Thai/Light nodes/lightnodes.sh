@@ -30,7 +30,11 @@ make cel-key
 # Check version
 celestia version
 # OUTPUT
-# v0.6.4
+# Semantic version: v0.6.4
+# Commit: 747c9e593542dfb32a933c731a9cd74b1fab897f
+# Build Date: Thu Feb 16 02:06:59 AM CST 2023
+# System version: amd64/linux
+# Golang version: go1.19.1
 
 echo " "
 echo -e "\e[1m\e[32mSet Initialize the light node... \e[0m" && sleep 1
@@ -45,7 +49,7 @@ After=network-online.target
  
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/celestia light start --core.ip https://grpc-mocha.pops.one/ --core.grpc.port 9090 --gateway --gateway.addr localhost --gateway.port 26659 --p2p.network mocha
+ExecStart=/usr/local/bin/celestia light start --core.ip https://grpc-mocha.pops.one/ --core.grpc.port 9090 --gateway --gateway.addr localhost --gateway.port 26659 --p2p.network mocha
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
