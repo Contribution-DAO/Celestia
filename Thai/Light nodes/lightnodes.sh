@@ -41,6 +41,13 @@ echo -e "\e[1m\e[32mSet Initialize the light node... \e[0m" && sleep 1
 celestia light init
 
 
+
+echo " "
+echo -e "\e[1m\e[32mAdd live peers... \e[0m" && sleep 1
+peers="d5519e378247dfb61dfe90652d1fe3e2b3005a5b@65.109.68.190:20656,e286b562eddc6fea1b2635f6623430225666fb2f@147.135.144.58:26656,3ad7f2d36f5e15d902c7aff7a305bea40f03f95c@163.172.111.148:26656,6a03b088a9e183e7faa897afcc6b50c6971a4cd5@159.69.5.164:26656,2c93920515e53e0e08ca4bc86dd76a194ee34a29@89.117.59.233:26656,0d8b40858dcdf1e4370b2ed66b632bddf13a150d@75.119.143.147:26656,c1c0813668f8e67237f09cf9f57af802a0dc2f93@168.119.226.107:26756"
+sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.celestia-light-mocha/config.toml
+
+echo " "
 echo -e "\e[1m\e[32mCreate celestia-appd.service ... \e[0m" && sleep 1
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
