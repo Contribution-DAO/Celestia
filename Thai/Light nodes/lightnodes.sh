@@ -56,7 +56,7 @@ After=network-online.target
  
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia light start --core.ip https://grpc-mocha.pops.one/ --core.grpc.port 9090 --gateway --gateway.addr localhost --gateway.port 26659 --p2p.network mocha
+ExecStart=celestia light start --core.ip https://grpc-blockspacerace.pops.one/ --keyring.accname my_celes_key --gateway --gateway.addr localhost --gateway.port 26659 --p2p.network blockspacerace --metrics.tls=false --metrics --metrics.endpoint otel.celestia.tools:4318
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
