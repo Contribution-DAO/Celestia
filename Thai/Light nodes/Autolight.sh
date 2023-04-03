@@ -143,12 +143,12 @@ echo -e "\e[1m\e[32mYour Node was Restart complete!\e[0m" && sleep 1
 ;;
 
 
-function Uninstall {
-echo " "
-echo -e "\e[1m\e[32mDelete you node ... \e[0m" && sleep 1
+"Uninstall")
+echo -e '\e[1m\e[32mYou choose Uninstall ...\e[0m' && sleep 1
 sudo systemctl stop celestia-lightd && sudo systemctl disable celestia-lightd && sudo rm /etc/systemd/system/celestia-lightd.service && sudo systemctl daemon-reload && rm -rf $HOME/.celestia-light-blockspacerace-0 && rm -rf $HOME/celestia-node
-
-}
+echo -e "\e[1m\e[32mYour Node was Uninstall complete!\e[0m" && sleep 1
+break
+;;
 
 "Quit")
 break
