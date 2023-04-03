@@ -79,74 +79,81 @@ function Restart {
 
 function NodeID {
         echo " "
-        echo -e "\e[1m\e[32mRestart you node ... \e[0m" && sleep 1
+        echo -e "\e[1m\e[32myou node ID is ... \e[0m" && sleep 1
         AUTH_TOKEN=$(celestia light auth admin --p2p.network blockspacerace)
 curl -s -X POST      -H "Authorization: Bearer $AUTH_TOKEN"      -H 'Content-Type: application/json'      -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}'      http://localhost:26658 | jq .result.ID
-                            }
+}
 
 
 
-                            function Getwallet {
-                                    echo " "
-                                    echo -e "\e[1m\e[32mList you wallet... \e[0m" && sleep 1
-                                    ./cel-key list --node.type light --keyring-backend test --p2p.network blockspacerace
-                            }
+function Getwallet {
+        echo " "
+        echo -e "\e[1m\e[32mList you wallet... \e[0m" && sleep 1
+        ./cel-key list --node.type light --keyring-backend test --p2p.network blockspacerace
+}
 
 
 
 
 
-                            echo -e "\e[1m\e[32mMenu V1.2 \e[0m" && sleep 1
+echo -e "\e[1m\e[32mMenu V1.2 \e[0m" && sleep 1
 
-                            PS3='Please enter your choice (input your option number and press enter): '
-                            options=("Install" "Get Wallet" "Get Node ID" "Restart" "Uninstall" "Quit")
-
-
-
-                            select opt in "${options[@]}"
-                            do
-                                        case $opt in
-                                                        "Install")
-                                                                            echo -e '\e[1m\e[32mYou choose Install...\e[0m' && sleep 1
-                                                                            InstallingRequiredtool
-                                                                            InstallingGo
-                                                                            Installingcelestia-app
-                                                                            Init
-                                                                            CreateService
-                                                                            Restart
-                                                                            echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
-                                                                            #break
-                                                                            ;;
+PS3='Please enter your choice (input your option number and press enter): '
+options=("Install" "Get Wallet" "Get Node ID" "Restart" "Uninstall" "Quit")
 
 
-                                                                    "Get Node ID")
-                                                                            echo -e '\e[1m\e[32mYou choose Get Node ID...\e[0m' && sleep 1
-                                                                            NodeID
-                                                                          
-                                                                            #break
-                                                                            ;;
+
+select opt in "${options[@]}"
+do
+            case $opt in
+"Install")
+echo -e '\e[1m\e[32mYou choose Install...\e[0m' && sleep 1
+InstallingRequiredtool
+InstallingGo
+Installingcelestia-app
+Init
+CreateService
+echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
+#break
+;;
 
 
-                                                                    "Get Wallet")
-                                                                            echo -e '\e[1m\e[32mYou choose Get Wallet...\e[0m' && sleep 1
-                                                                            Getwallet
-                                                                            
-                                                                            #break
-                                                                            ;;
+"Get Node ID")
+echo -e '\e[1m\e[32mYou choose Get Node ID...\e[0m' && sleep 1
+NodeID
+      
+#break
+;;
 
 
-                                                                    "Restart")
-                                                                            echo -e '\e[1m\e[32mYou choose Restart...\e[0m' && sleep 1
-                                                                            Restart
-                                                                            echo -e "\e[1m\e[32mYour Node was Restart complete!\e[0m" && sleep 1
-                                                                            #break
-                                                                            ;;
+"Get Wallet")
+echo -e '\e[1m\e[32mYou choose Get Wallet...\e[0m' && sleep 1
+echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
+Getwallet
+
+#break
+;;
 
 
-                                                                    "Quit")
-                                                                            break
-                                                                            ;;
+"Restart")
+echo -e '\e[1m\e[32mYou choose Restart...\e[0m' && sleep 1
+Restart
+echo -e "\e[1m\e[32mYour Node was Restart complete!\e[0m" && sleep 1
+#break
+;;
 
-                                                                    *) echo -e "\e[91minvalid option $REPLY\e[0m";;
-                                                                        esac
-                                                                done
+
+function Uninstall {
+echo " "
+echo -e "\e[1m\e[32mDelete you node ... \e[0m" && sleep 1
+sudo systemctl stop celestia-lightd && sudo systemctl disable celestia-lightd && sudo rm /etc/systemd/system/celestia-lightd.service && sudo systemctl daemon-reload && rm -rf $HOME/.celestia-light-blockspacerace-0 && rm -rf $HOME/celestia-node
+
+}
+
+"Quit")
+break
+;;
+
+*) echo -e "\e[91minvalid option $REPLY\e[0m";;
+    esac
+done
