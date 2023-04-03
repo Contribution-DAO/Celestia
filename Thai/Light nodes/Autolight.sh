@@ -42,7 +42,7 @@ make cel-key
 function Init {
         echo " "
         echo -e "\e[1m\e[32mInit Create... \e[0m" && sleep 1
-        celestia light init --p2p.network blockspacerace 
+        celestia light init --p2p.network blockspacerace
 }
 
 
@@ -111,7 +111,6 @@ echo -e '\e[1m\e[32mYou choose Install...\e[0m' && sleep 1
 InstallingRequiredtool
 InstallingGo
 Installingcelestia-app
-Init
 CreateService
 echo -e "\e[1m\e[32mYour Node was Install!\e[0m" && sleep 1
 #break
@@ -129,7 +128,7 @@ NodeID
 "Get Wallet")
 echo -e '\e[1m\e[32mYou choose Get Wallet...\e[0m' && sleep 1
 echo -e "\e[1m\e[31mPlease write you mnemonic phrase. \e[0m" && sleep 1
-Getwallet
+Init
 
 #break
 ;;
